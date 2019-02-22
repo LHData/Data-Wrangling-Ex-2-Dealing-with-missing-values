@@ -24,3 +24,6 @@ titanic <- mutate(titanic, boat = ifelse(is.na(boat), "none", boat))
 #4: Cabin
 #I think it does make sense to fill in cabin with "none" because those could be passengers without an assigned cabin
 titanic <- mutate(titanic, has_cabin_number = ifelse(is.na(titanic$cabin), 0, 1))
+
+#save data frame to csv
+write_csv(titanic, "titanic_clean.csv")
